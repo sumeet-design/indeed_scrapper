@@ -61,10 +61,10 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 def scrape_and_store_data(request):
-    # Connect to MongoDB
-    client = pymongo.MongoClient('mongodb://localhost:27017/')
-    db = client['indeed']
-    collection = db['myscrapper_job']
+    # # Connect to MongoDB
+    # client = pymongo.MongoClient('mongodb://localhost:27017/')
+    # db = client['indeed_job']
+    # collection = db['myscrapper_job']
 
    
 
@@ -195,7 +195,7 @@ def scrape_and_store_data(request):
         # collection.insert_one(document)
 
     # Close the MongoDB connection
-    client.close()
+    # client.close()
 
     return HttpResponse("Data scraped and stored successfully!")
 

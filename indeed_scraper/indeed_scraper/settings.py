@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import urllib.parse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,14 +81,15 @@ WSGI_APPLICATION = 'indeed_scraper.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Sumeet',
+        # 'NAME': 'Indeedcluster',
         'CLIENT': {
-            'host': 'mongodb+srv://sumeet.1x1zf5g.mongodb.net/',
-            'port': 27017,
-            'username': ' jpsharma8888',
-            'password': '4j93Mw4m4d1z4EzQ',
+            'host': 'mongodb+srv://jpsharma8888:tvy6rsPgVpp34HIt@cluster0.nh2updb.mongodb.net/?retryWrites=true&w=majority',
+            # 'port': 27017,
+            'name': 'indeed_job',
+            # 'password': '4j93Mw4m4d1z4EzQ',
             # 'authSource': 'admin',
             #   # Default authentication database
+            'authMechanism':"SCRAM-SHA-1" #For atlas cloud db
         }
     }
 }
