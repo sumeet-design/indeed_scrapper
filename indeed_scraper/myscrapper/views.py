@@ -135,7 +135,7 @@ def scrape_and_store_data(request):
 
     # driver.get("https://www.indeed.com/q-USA-jobs.html")
 
-    for i in range(0,3):
+    for i in range(0,4):
         driver.get(paginaton_url.format(job_,location,i*10))
         
         
@@ -171,6 +171,7 @@ def scrape_and_store_data(request):
     for job_data in job_list:
         count = count + 1
         job = Job(
+            id = count,
             title=job_data['title'],
             href=job_data['href'],
             company=job_data['company'],
@@ -196,6 +197,6 @@ def scrape_and_store_data(request):
 
     # Close the MongoDB connection
     # client.close()
-
+    # driver.quit()
     return HttpResponse("Data scraped and stored successfully!")
 
